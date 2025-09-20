@@ -7,10 +7,7 @@ var rng = RandomNumberGenerator.new()
 var dir =Vector2.ZERO
 
 func _ready() -> void:
-	while true:
-		dir = startball()
-		if dir and dir != Vector2.ZERO:
-			break
+	dir = startball()
 	vel = dir*SPEED
 
 func _physics_process(delta: float) -> void:
@@ -20,9 +17,15 @@ func _physics_process(delta: float) -> void:
 		vel = vel.bounce(coll_info.get_normal())
 		lerp(vel,vel,1)
 	
-func rand_numb(min_limt,max_limit)->Vector2:
-	var value =Vector2(rng.randf_range(min_limt,max_limit),rng.randf_range(min_limt,max_limit)).normalized()
-	return value
+func rand_numb(min_lim,max_lim)->Vector2:
+	var rand = Vector2.ZERO
+	while true:
+		rand.x = rng.randi_range(-1,1)
+		rand.y = rng.randf_range(-0.6,0.6)
+		if rand.x != 0 and rand.y != 0:
+			break
+		
+	return rand
 
 func startball():
-	return rand_numb(-0.60,0.60)
+	return rand_numb(-0.6,0.6)
