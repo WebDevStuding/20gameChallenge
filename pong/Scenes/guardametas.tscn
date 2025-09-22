@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch8s5vaf14w7a"]
+
+[ext_resource type="Script" uid="uid://dndbk36ls2a4s" path="res://Scripts/guardametas.gd" id="1_8pgnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(69, 613.5)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_8pgnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -7.25)
+shape = SubResource("RectangleShape2D_8gbba")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
