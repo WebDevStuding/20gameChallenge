@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgyekptiwmhx0"]
+[gd_scene load_steps=6 format=3 uid="uid://cgyekptiwmhx0"]
 
 [ext_resource type="Script" uid="uid://j3qemnlw7pfl" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dkie3i6q4o3s" path="res://Scenes/Borders.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://c6sf3hufpvu0m" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://40v0vggevco8" path="res://Scenes/contrincante.tscn" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://ch8s5vaf14w7a" path="res://Scenes/guardametas.tscn" id="4_jjvhh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
+
+[node name="Player2" parent="." instance=ExtResource("2_kry3j")]
+position = Vector2(1090, 331)
 
 [node name="Borders" parent="." instance=ExtResource("1_bo1nx")]
 collision_layer = 4
@@ -19,7 +23,7 @@ position = Vector2(67, 323)
 position = Vector2(576, 325)
 
 [node name="Area2D" parent="." instance=ExtResource("4_jjvhh")]
-position = Vector2(-30, 330)
+position = Vector2(-29, 330)
 
 [node name="Area2D2" parent="." instance=ExtResource("4_jjvhh")]
 position = Vector2(1180, 330)
